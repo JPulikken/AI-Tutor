@@ -7,7 +7,7 @@ A friendly, autism-friendly AI tutor frontend designed specifically for autistic
 
 ## ✨ Features
 
-### For Children 🎈
+### For Autistic Children 🎈
 - **💬 Chat with AI** - Interactive conversations with a friendly AI tutor
 - **📚 Learning Lessons** - Interactive lessons on colors, numbers, letters, shapes, emotions, and social skills
 - **⭐ Earn Stars** - Complete lessons to earn stars and track progress
