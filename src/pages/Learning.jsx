@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import CameraView from '../components/CameraView'
 
 const Learning = ({ onCompleteLesson, addStars, userProgress }) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [activeLesson, setActiveLesson] = useState(null)
+  const [showCamera, setShowCamera] = useState(false)
 
   const categories = [
     { id: 'all', name: 'All Topics', icon: '📚' },
@@ -171,22 +173,30 @@ const Learning = ({ onCompleteLesson, addStars, userProgress }) => {
 
   const handleStartLesson = (lesson) => {
     setActiveLesson(lesson)
+    setShowCamera(true)
   }
 
   const handleCompleteLesson = () => {
     if (activeLesson) {
       onCompleteLesson(activeLesson.id)
       addStars(activeLesson.stars)
+      setShowCamera(false)
       setActiveLesson(null)
     }
+  }
+
+  const handleCloseCamera = () => {
+    setShowCamera(false)
   }
 
   if (activeLesson) {
     return (
       <div className="learning-active">
+        <CameraView isActive={showCamera} onClose={handleCloseCamera} />
+        
         <button 
           className="btn btn-outline"
-          onClick={() => setActiveLesson(null)}
+          onClick={() => { setActiveLesson(null); setShowCamera(false); }}
           style={{ marginBottom: '16px' }}
         >
           ← Back to Lessons

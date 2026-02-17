@@ -5,7 +5,17 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    host: true,
+    hmr: false
+  },
+  build: {
+    minify: false,
+    sourcemap: false
+  },
+  esbuild: {
+    supported: {
+      'top-level-await': true
+    }
   }
 })
 

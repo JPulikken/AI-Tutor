@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import CameraView from '../components/CameraView'
 
 const Chat = ({ userProgress }) => {
   const [messages, setMessages] = useState([
@@ -17,6 +18,7 @@ const Chat = ({ userProgress }) => {
   ])
   const [inputText, setInputText] = useState('')
   const [isTyping, setIsTyping] = useState(false)
+  const [showCamera, setShowCamera] = useState(false)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -82,10 +84,28 @@ const Chat = ({ userProgress }) => {
 
   return (
     <div className="chat">
+      <CameraView isActive={showCamera} onClose={() => setShowCamera(false)} />
+      
       <header className="page-header">
         <h1 className="page-title">💬 Chat with Your Tutor</h1>
         <p className="page-subtitle">Ask questions and learn new things!</p>
       </header>
+
+      {/* Camera Toggle Button */}
+      <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
+        <button 
+          className={`btn ${showCamera ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setShowCamera(!showCamera)}
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '8px',
+            padding: '8px 16px'
+          }}
+        >
+          {showCamera ? '📷 Camera On' : '📷 Camera Off'}
+        </button>
+      </div>
 
       {/* Quick Questions */}
       <div className="card" style={{ marginBottom: '16px', background: '#E3F2FD' }}>
