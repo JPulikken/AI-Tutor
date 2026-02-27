@@ -38,6 +38,23 @@ function App() {
     localStorage.setItem('autismTutorProgress', JSON.stringify(userProgress))
   }, [userProgress])
 
+  // Apply theme to root element
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', userProgress.preferences.theme)
+  }, [userProgress.preferences.theme])
+
+  // Apply font size to root element
+  useEffect(() => {
+    const fontSizeMap = {
+      'small': '14px',
+      'medium': '16px',
+      'large': '18px',
+      'extra-large': '20px'
+    }
+    const fontSize = fontSizeMap[userProgress.preferences.fontSize] || '16px'
+    document.documentElement.style.fontSize = fontSize
+  }, [userProgress.preferences.fontSize])
+
   const updateProgress = (updates) => {
     setUserProgress(prev => ({
       ...prev,
