@@ -354,4 +354,3 @@ const Dashboard = ({ userProgress }) => {
 }
 
 export default Dashboard
-

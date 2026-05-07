@@ -403,5 +403,4 @@ const Learning = ({ onCompleteLesson, addStars, userProgress }) => {
   )
 }
 
-export default Learning
-
+export default Learning;
