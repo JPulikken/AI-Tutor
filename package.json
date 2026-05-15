@@ -1,13 +1,15 @@
 {
-  "name": "autism-tutor",
+  "name": "ai-tutor",
   "version": "1.0.0",
-  "description": "AI Tutor for Autistic Children - A friendly learning companion",
+  "description": "AI-Tutor: Personalized learning engine for children with Autism Spectrum Disorder",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "npm --prefix backend test"
+    "test": "npm run test:frontend && npm --prefix backend test",
+    "test:frontend": "node --test src/**/*.test.js",
+    "test:backend": "npm --prefix backend test"
   },
   "dependencies": {
     "face-api.js": "^0.22.2",

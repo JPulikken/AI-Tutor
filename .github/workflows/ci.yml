@@ -25,7 +25,7 @@ jobs:
       - name: Install backend deps
         run: npm ci --prefix backend
 
-      - name: Run backend tests
+      - name: Run tests
         run: npm run test
 
       - name: Build frontend

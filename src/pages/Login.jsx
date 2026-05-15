@@ -87,10 +87,10 @@ const Login = ({ onLogin }) => {
     <main className="auth-page">
       <section className="auth-card">
         <div>
-          <p className="auth-eyebrow">AI Tutor</p>
+          <p className="auth-eyebrow">AI-Tutor</p>
           <h1>{isRegistering ? "Create an account" : "Welcome back"}</h1>
           <p className="auth-copy">
-            Sign in to save lessons, stars, reports, and settings across sessions.
+            Sign in to save personalized lessons, stars, reports, and ASD-friendly learning settings.
           </p>
         </div>
 

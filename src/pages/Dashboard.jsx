@@ -24,6 +24,7 @@ const Dashboard = ({
   onSelectChild,
   onAddChild,
   onUpdateChild,
+  onUpdatePreferences,
 }) => {
   const [currentEmotion, setCurrentEmotion] = useState("neutral");
   const [report, setReport] = useState("");
@@ -43,6 +44,12 @@ const Dashboard = ({
   const [isLoadingNotifications, setIsLoadingNotifications] = useState(false);
   const [childForm, setChildForm] = useState(emptyChildForm);
   const [editingChildId, setEditingChildId] = useState("");
+  const [goalForm, setGoalForm] = useState({
+    title: "",
+    topic: "colors",
+    targetLevel: "medium",
+    notes: "",
+  });
 
   const selectedChild = useMemo(
     () => childProfiles.find((child) => child.id === selectedChildId) || childProfiles[0],
@@ -280,11 +287,51 @@ const Dashboard = ({
     setChildForm(emptyChildForm);
   };
 
+  const teacherGoals = userProgress.preferences?.teacherGoals || [];
+
+  const saveTeacherGoals = (nextGoals) => {
+    onUpdatePreferences?.({
+      ...userProgress.preferences,
+      teacherGoals: nextGoals,
+    });
+  };
+
+  const handleGoalSubmit = (event) => {
+    event.preventDefault();
+    if (!goalForm.title.trim()) return;
+
+    saveTeacherGoals([
+      ...teacherGoals,
+      {
+        ...goalForm,
+        id: `goal-${Date.now()}`,
+        title: goalForm.title.trim(),
+        notes: goalForm.notes.trim(),
+        completed: false,
+        createdAt: new Date().toISOString(),
+      },
+    ]);
+    setGoalForm({
+      title: "",
+      topic: "colors",
+      targetLevel: "medium",
+      notes: "",
+    });
+  };
+
+  const toggleTeacherGoal = (goalId) => {
+    saveTeacherGoals(
+      teacherGoals.map((goal) =>
+        goal.id === goalId ? { ...goal, completed: !goal.completed } : goal
+      )
+    );
+  };
+
   return (
     <div className="dashboard">
       <header className="page-header">
-        <h1 className="page-title">Progress Dashboard 📊</h1>
-        <p className="page-subtitle">Track learning, reports, and mood check-ins.</p>
+        <h1 className="page-title">AI-Tutor Progress Dashboard 📊</h1>
+        <p className="page-subtitle">Track personalized learning, ASD-friendly support signals, reports, and mood check-ins.</p>
       </header>
 
       <section className="dashboard-panel">
@@ -349,6 +396,73 @@ const Dashboard = ({
             </button>
           )}
         </form>
+      </section>
+
+      <section className="dashboard-panel">
+        <div className="dashboard-section-header">
+          <div>
+            <h2>Teacher / Therapist Goals</h2>
+            <p>Assign focused targets that guide lessons and caregiver review.</p>
+          </div>
+        </div>
+
+        <form className="teacher-goal-form" onSubmit={handleGoalSubmit}>
+          <input
+            value={goalForm.title}
+            onChange={(event) => setGoalForm((current) => ({ ...current, title: event.target.value }))}
+            placeholder="Goal, e.g. identify 5 colors"
+            required
+          />
+          <select
+            value={goalForm.topic}
+            onChange={(event) => setGoalForm((current) => ({ ...current, topic: event.target.value }))}
+          >
+            <option value="colors">Colors</option>
+            <option value="numbers">Numbers</option>
+            <option value="letters">Letters</option>
+            <option value="shapes">Shapes</option>
+            <option value="emotions">Emotions</option>
+            <option value="social">Social skills</option>
+          </select>
+          <select
+            value={goalForm.targetLevel}
+            onChange={(event) => setGoalForm((current) => ({ ...current, targetLevel: event.target.value }))}
+          >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <input
+            value={goalForm.notes}
+            onChange={(event) => setGoalForm((current) => ({ ...current, notes: event.target.value }))}
+            placeholder="Notes"
+          />
+          <button className="btn btn-primary" type="submit">
+            Add Goal
+          </button>
+        </form>
+
+        <div className="teacher-goal-list">
+          {teacherGoals.length ? (
+            teacherGoals.map((goal) => (
+              <div className={`teacher-goal-item ${goal.completed ? "completed" : ""}`} key={goal.id}>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={Boolean(goal.completed)}
+                    onChange={() => toggleTeacherGoal(goal.id)}
+                  />
+                  <span>
+                    <strong>{goal.title}</strong>
+                    <small>{goal.topic} | {goal.targetLevel}{goal.notes ? ` | ${goal.notes}` : ""}</small>
+                  </span>
+                </label>
+              </div>
+            ))
+          ) : (
+            <p className="camera-privacy-note">No assigned goals yet.</p>
+          )}
+        </div>
       </section>
 
       <section className="dashboard-panel dashboard-camera-panel">

@@ -137,6 +137,162 @@ const lessons = [
   },
 ];
 
+const videoRecommendations = {
+  "colors-1": {
+    title: "Learn Colors with Wonderville Friends",
+    source: "Pinkfong and Hogi",
+    url: "https://www.youtube.com/results?search_query=Learn+Colors+with+Wonderville+Friends+Pinkfong+Hogi",
+  },
+  "numbers-1": {
+    title: "Counting 1 to 10",
+    source: "Pinkfong Number Songs",
+    url: "https://www.youtube.com/results?search_query=Counting+1+to+10+Number+Songs+Pinkfong",
+  },
+  "letters-1": {
+    title: "Learn ABC with Surprise Boxes",
+    source: "BabyBus",
+    url: "https://www.youtube.com/results?search_query=Learn+ABC+with+Surprise+Boxes+BabyBus",
+  },
+  "shapes-1": {
+    title: "The Shape Song #2",
+    source: "Super Simple Songs",
+    url: "https://www.youtube.com/results?search_query=The+Shape+Song+%232+Super+Simple+Songs",
+  },
+  "basics-1": {
+    title: "Cai & Kate emotions episodes",
+    source: "Chill Project Productions",
+    url: "https://www.youtube.com/results?search_query=Cai+and+Kate+emotions+for+kids",
+  },
+  "social-1": {
+    title: "Saying Hello",
+    source: "Sesame Workshop",
+    url: "https://www.youtube.com/results?search_query=Sesame+Workshop+Saying+Hello+autism",
+  },
+};
+
+const levelQuestionBank = {
+  "colors-1": {
+    easy: [
+      { question: "Which color is an apple often?", answer: "red", options: ["red", "blue", "yellow"] },
+      { question: "Which color is the sky on a clear day?", answer: "blue", options: ["green", "blue", "orange"] },
+      { question: "Which color is grass?", answer: "green", options: ["green", "purple", "red"] },
+    ],
+    medium: [
+      { question: "Which two colors can make green?", answer: "blue and yellow", options: ["blue and yellow", "red and blue", "orange and purple"] },
+      { question: "Which color matches a banana?", answer: "yellow", options: ["yellow", "red", "green"] },
+      { question: "Which object is usually orange?", answer: "carrot", options: ["carrot", "cloud", "grass"] },
+      { question: "Which color feels calm like water?", answer: "blue", options: ["blue", "red", "black"] },
+    ],
+    hard: [
+      { question: "If red and yellow are mixed, which color do we get?", answer: "orange", options: ["orange", "green", "purple"], challengeOption: "brown" },
+      { question: "Which color is lighter: navy blue or sky blue?", answer: "sky blue", options: ["sky blue", "navy blue", "both are the same"], challengeOption: "red" },
+      { question: "Which is a warm color?", answer: "red", options: ["red", "blue", "green"], challengeOption: "gray" },
+      { question: "Which color can stand for stop signs?", answer: "red", options: ["red", "yellow", "purple"], challengeOption: "white" },
+      { question: "Which color group has red, yellow, and orange?", answer: "warm colors", options: ["warm colors", "cool colors", "neutral colors"], challengeOption: "shape colors" },
+    ],
+  },
+  "numbers-1": {
+    easy: [
+      { question: "What comes after 2?", answer: "3", options: ["1", "3", "5"] },
+      { question: "How many thumbs are on two hands?", answer: "2", options: ["2", "4", "8"] },
+      { question: "What number comes before 5?", answer: "4", options: ["3", "4", "6"] },
+    ],
+    medium: [
+      { question: "What is 3 + 2?", answer: "5", options: ["4", "5", "6"] },
+      { question: "What comes after 8?", answer: "9", options: ["7", "9", "10"] },
+      { question: "How many fingers are on one hand?", answer: "5", options: ["4", "5", "10"] },
+      { question: "Which number is bigger?", answer: "7", options: ["3", "7", "2"] },
+    ],
+    hard: [
+      { question: "What is 10 - 3?", answer: "7", options: ["6", "7", "8"], challengeOption: "5" },
+      { question: "Which number is even?", answer: "8", options: ["5", "7", "8"], challengeOption: "9" },
+      { question: "What is 4 + 4?", answer: "8", options: ["6", "7", "8"], challengeOption: "9" },
+      { question: "If you have 6 blocks and add 2 more, how many blocks?", answer: "8", options: ["7", "8", "9"], challengeOption: "10" },
+      { question: "Which number is missing: 2, 4, 6, __, 10?", answer: "8", options: ["7", "8", "9"], challengeOption: "6" },
+    ],
+  },
+  "letters-1": {
+    easy: [
+      { question: "What letter does Apple start with?", answer: "A", options: ["A", "B", "C"] },
+      { question: "What letter does Ball start with?", answer: "B", options: ["A", "B", "D"] },
+      { question: "What letter does Cat start with?", answer: "C", options: ["C", "E", "F"] },
+    ],
+    medium: [
+      { question: "Which word starts with D?", answer: "Dog", options: ["Apple", "Cat", "Dog"] },
+      { question: "Which letter comes after B?", answer: "C", options: ["A", "C", "D"] },
+      { question: "Which word starts with F?", answer: "Fish", options: ["Fish", "Elephant", "Ball"] },
+      { question: "Which letter comes before E?", answer: "D", options: ["C", "D", "F"] },
+    ],
+    hard: [
+      { question: "Which pair is in alphabetical order?", answer: "A, B", options: ["A, B", "C, A", "F, D"], challengeOption: "E, C" },
+      { question: "Which word has the beginning sound /b/?", answer: "Ball", options: ["Apple", "Ball", "Fish"], challengeOption: "Cat" },
+      { question: "What letter is missing: A, B, __, D?", answer: "C", options: ["C", "E", "F"], challengeOption: "A" },
+      { question: "Which word starts with the same sound as Cat?", answer: "Car", options: ["Dog", "Car", "Fish"], challengeOption: "Ball" },
+      { question: "Which letter comes after E?", answer: "F", options: ["D", "F", "A"], challengeOption: "C" },
+    ],
+  },
+  "shapes-1": {
+    easy: [
+      { question: "Which shape is round?", answer: "circle", options: ["circle", "square", "triangle"] },
+      { question: "Which shape has 3 sides?", answer: "triangle", options: ["star", "triangle", "circle"] },
+      { question: "Which shape has 4 equal sides?", answer: "square", options: ["square", "circle", "heart"] },
+    ],
+    medium: [
+      { question: "What shape is a pizza slice?", answer: "triangle", options: ["triangle", "circle", "square"] },
+      { question: "What shape is a wheel?", answer: "circle", options: ["circle", "star", "square"] },
+      { question: "Which shape has points like the night sky?", answer: "star", options: ["heart", "star", "circle"] },
+      { question: "Which shape can look like a window?", answer: "square", options: ["square", "circle", "triangle"] },
+    ],
+    hard: [
+      { question: "A rectangle has how many sides?", answer: "4", options: ["3", "4", "5"], challengeOption: "6" },
+      { question: "Which shape has no corners?", answer: "circle", options: ["triangle", "circle", "square"], challengeOption: "rectangle" },
+      { question: "Which shape has more sides: triangle or square?", answer: "square", options: ["triangle", "square", "same"], challengeOption: "circle" },
+      { question: "Which object is usually a rectangle?", answer: "door", options: ["door", "ball", "slice of pizza"], challengeOption: "star sticker" },
+      { question: "Which shape is often used for love?", answer: "heart", options: ["heart", "square", "triangle"], challengeOption: "circle" },
+    ],
+  },
+  "basics-1": {
+    easy: [
+      { question: "When you smile, how might you feel?", answer: "happy", options: ["happy", "sad", "angry"] },
+      { question: "When you cry, how might you feel?", answer: "sad", options: ["excited", "sad", "calm"] },
+      { question: "When your body feels quiet and safe, you may feel...", answer: "calm", options: ["calm", "angry", "surprised"] },
+    ],
+    medium: [
+      { question: "When you get a gift, how might you feel?", answer: "happy", options: ["sad", "happy", "angry"] },
+      { question: "When a loud noise happens, how might you feel?", answer: "surprised", options: ["surprised", "calm", "sleepy"] },
+      { question: "What can help when you feel angry?", answer: "take slow breaths", options: ["take slow breaths", "shout louder", "throw toys"] },
+      { question: "When you miss your friend, how might you feel?", answer: "sad", options: ["happy", "sad", "excited"] },
+    ],
+    hard: [
+      { question: "What is a good first step when a task feels too hard?", answer: "ask for help", options: ["ask for help", "give up forever", "hide the task"], challengeOption: "skip all learning" },
+      { question: "Which feeling can make your body feel full of energy?", answer: "excited", options: ["excited", "calm", "sleepy"], challengeOption: "bored" },
+      { question: "If you feel frustrated, what can you say?", answer: "I need a break", options: ["I need a break", "I cannot learn", "go away"], challengeOption: "never mind" },
+      { question: "Which is a coping strategy?", answer: "counting breaths", options: ["counting breaths", "covering the answer", "rushing"], challengeOption: "closing the app" },
+      { question: "Which emotion might happen when plans change suddenly?", answer: "worried", options: ["worried", "hungry", "purple"], challengeOption: "square" },
+    ],
+  },
+  "social-1": {
+    easy: [
+      { question: "What can you say when you meet someone?", answer: "hello", options: ["hello", "banana", "red"] },
+      { question: "What can you say when you leave?", answer: "goodbye", options: ["goodbye", "please", "circle"] },
+      { question: "What polite word can you use when asking?", answer: "please", options: ["please", "blue", "seven"] },
+    ],
+    medium: [
+      { question: "What do you say when someone gives you something?", answer: "thank you", options: ["please", "thank you", "hello"] },
+      { question: "What do you say when you want something?", answer: "please", options: ["hello", "please", "goodbye"] },
+      { question: "What is one friendly greeting?", answer: "wave hello", options: ["wave hello", "turn away", "grab"] },
+      { question: "What can you do if you do not want to talk?", answer: "use a wave or card", options: ["use a wave or card", "push someone", "run in circles"] },
+    ],
+    hard: [
+      { question: "Someone says hello. What is a kind response?", answer: "say hello back", options: ["say hello back", "ignore every time", "take their toy"], challengeOption: "count to ten" },
+      { question: "What can you say if you need space?", answer: "I need space, please", options: ["I need space, please", "go away now", "never talk"], challengeOption: "blue sky" },
+      { question: "What should you do before joining a game?", answer: "ask to join", options: ["ask to join", "take over", "hide the game"], challengeOption: "say nothing always" },
+      { question: "Which is polite after help?", answer: "thank you", options: ["thank you", "mine", "stop"], challengeOption: "triangle" },
+      { question: "If someone is busy, what can you do?", answer: "wait or ask later", options: ["wait or ask later", "interrupt louder", "push in"], challengeOption: "forget manners" },
+    ],
+  },
+};
+
 const speak = (text) => {
   if (!("speechSynthesis" in window)) return;
 
@@ -197,8 +353,10 @@ const inferDifficultyFromProfile = (userProgress, childId) => {
   return "medium";
 };
 
-const buildAdaptiveQuiz = (quiz = [], level = "medium") =>
-  quiz.map((question) => {
+const buildAdaptiveQuiz = (lesson, level = "medium") => {
+  const sourceQuiz = levelQuestionBank[lesson?.id]?.[level] || lesson?.quiz || [];
+
+  return sourceQuiz.map((question) => {
     const base = Array.isArray(question.options) ? [...question.options] : [];
     const answer = question.answer;
     const uniqueOptions = [...new Set(base)];
@@ -229,6 +387,7 @@ const buildAdaptiveQuiz = (quiz = [], level = "medium") =>
       hint: question.hint || "You can do this. Read slowly and choose the best answer.",
     };
   });
+};
 
 const getSupportPrompt = (emotion) => {
   const emotionKey = negativeEmotions.has(emotion) ? emotion : "default";
@@ -243,7 +402,7 @@ const getSupportPrompt = (emotion) => {
   };
 };
 
-const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) => {
+const Learning = ({ onCompleteLesson, onSaveSession, onUpdatePreferences, userProgress, childId }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [activeLesson, setActiveLesson] = useState(null);
   const [showCamera, setShowCamera] = useState(false);
@@ -256,7 +415,7 @@ const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) =>
   const [adaptiveLevel, setAdaptiveLevel] = useState("medium");
 
   const adaptiveQuiz = useMemo(
-    () => (activeLesson ? buildAdaptiveQuiz(activeLesson.quiz, adaptiveLevel) : []),
+    () => (activeLesson ? buildAdaptiveQuiz(activeLesson, adaptiveLevel) : []),
     [activeLesson, adaptiveLevel]
   );
 
@@ -344,6 +503,16 @@ const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) =>
   if (activeLesson) {
     const answeredCount = Object.keys(quizAnswers).length;
     const canComplete = answeredCount === adaptiveQuiz.length && !isSavingSession && Boolean(childId);
+    const recommendedVideo = videoRecommendations[activeLesson.id];
+    const completedVideos = userProgress.preferences?.completedVideos || [];
+    const videoCompleted = completedVideos.includes(activeLesson.id);
+    const markVideoComplete = () => {
+      onUpdatePreferences?.({
+        ...userProgress.preferences,
+        completedVideos: [...new Set([...completedVideos, activeLesson.id])],
+      });
+      setSessionNotice("Video practice marked complete.");
+    };
 
     return (
       <div className="learning-active">
@@ -410,8 +579,26 @@ const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) =>
           </div>
         </section>
 
+        {recommendedVideo && (
+          <section className="learning-panel learning-video-panel">
+            <div>
+              <h2>Recommended YouTube Practice</h2>
+              <p>{recommendedVideo.title} by {recommendedVideo.source}</p>
+              <small>{videoCompleted ? "Completed with caregiver review" : "Review the video before independent viewing."}</small>
+            </div>
+            <div className="learning-video-actions">
+              <a className="btn btn-outline" href={recommendedVideo.url} target="_blank" rel="noreferrer">
+                Open Video
+              </a>
+              <button className="btn btn-secondary" type="button" onClick={markVideoComplete} disabled={videoCompleted}>
+                {videoCompleted ? "Video Complete" : "Mark Complete"}
+              </button>
+            </div>
+          </section>
+        )}
+
         <section className="learning-panel quiz-panel">
-          <h2>Quick Quiz ❓</h2>
+          <h2>{adaptiveLevel.toUpperCase()} Level Quiz ({adaptiveQuiz.length} questions)</h2>
           {adaptiveQuiz.map((question, index) => (
             <div className="quiz-question" key={question.question}>
               <div className="quiz-question-header">
@@ -462,8 +649,8 @@ const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) =>
     <div className="learning">
       {sessionNotice && <p className="dashboard-status success">{sessionNotice}</p>}
       <header className="page-header">
-        <h1 className="page-title">Learning Center 📚</h1>
-        <p className="page-subtitle">Choose a lesson and start learning!</p>
+        <h1 className="page-title">Personalized Learning Engine 📚</h1>
+        <p className="page-subtitle">Choose a topic. AI-Tutor adapts the quiz level and adds video practice support.</p>
       </header>
 
       <section className="learning-category-bar">
@@ -490,6 +677,8 @@ const Learning = ({ onCompleteLesson, onSaveSession, userProgress, childId }) =>
               <div className="lesson-progress">
                 <span>⏱️ {lesson.duration}</span>
                 <span>⭐ {lesson.stars}</span>
+                {videoRecommendations[lesson.id] && <span>Video guide</span>}
+                {userProgress.preferences?.completedVideos?.includes(lesson.id) && <span>Watched</span>}
               </div>
             </button>
           );

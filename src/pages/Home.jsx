@@ -40,14 +40,14 @@ const Home = ({ onNavigate }) => {
   return (
     <div className="home">
       <header className="page-header">
-        <h1 className="page-title">Hello, friend 👋</h1>
-        <p className="page-subtitle">Choose where you want to go today.</p>
+        <h1 className="page-title">AI-Tutor Learning Space 👋</h1>
+        <p className="page-subtitle">Personalized lessons, calm support, and progress tracking for children with Autism Spectrum Disorder.</p>
       </header>
 
       <section className="home-hero">
         <div>
-          <h2>Ready to learn? 🚀</h2>
-          <p>Your tutor can help with lessons, questions, progress, and feelings.</p>
+          <h2>Ready for a personalized lesson?</h2>
+          <p>Your tutor adapts practice by topic, level, progress, and emotional readiness.</p>
         </div>
         <div className="home-hero-actions">
           <button className="btn btn-large btn-primary" onClick={() => onNavigate("learning")}>
@@ -93,7 +93,7 @@ const Home = ({ onNavigate }) => {
 
       <section className="home-tip">
         <h3>Daily Learning Tip 💡</h3>
-        <p>Take your time. It is okay to pause, ask for help, or try again.</p>
+        <p>Short, predictable practice works best. Pause, reset, and continue when the learner feels ready.</p>
       </section>
     </div>
   );

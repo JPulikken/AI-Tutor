@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for contributing to AI Tutor.
+Thanks for contributing to AI-Tutor.
 
 ## Setup
 
@@ -33,3 +33,5 @@ Thanks for contributing to AI Tutor.
 - Follow existing UI and API patterns.
 - Add tests when introducing new logic.
 - Avoid breaking API responses used by the frontend.
+- Keep caregiver/teacher safety in mind for camera, emotion, and video features.
+- Do not commit real `.env` files, API keys, database URLs, or child data.

@@ -16,7 +16,7 @@ const Sidebar = ({ currentView, onNavigate, totalStars, user, onLogout }) => {
         <div className="sidebar-logo" aria-hidden="true">
           🧠
         </div>
-        <span className="sidebar-title">Autism Tutor</span>
+        <span className="sidebar-title">AI-Tutor</span>
       </div>
 
       <nav className="sidebar-nav" aria-label="Main navigation">

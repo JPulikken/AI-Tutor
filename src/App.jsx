@@ -58,6 +58,8 @@ const defaultProgress = {
     progressReports: true,
     anonymousAnalytics: false,
     parentPin: "1234",
+    completedVideos: [],
+    teacherGoals: [],
   },
 };
 
@@ -267,6 +269,7 @@ function App() {
             <Learning
               onCompleteLesson={completeLesson}
               onSaveSession={saveLessonSession}
+              onUpdatePreferences={updatePreferences}
               childId={selectedChildId}
               userProgress={userProgress}
             />
@@ -288,6 +291,7 @@ function App() {
               onSelectChild={setSelectedChildId}
               onAddChild={addChildProfile}
               onUpdateChild={editChildProfile}
+              onUpdatePreferences={updatePreferences}
             />
           )}
           {currentView === "settings" && (

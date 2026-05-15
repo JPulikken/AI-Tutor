@@ -154,8 +154,8 @@ const Chat = ({ userProgress, authToken, children = [], selectedChildId }) => {
 
       <header className="page-header chat-page-header">
         <div>
-          <h1 className="page-title">Chat with Your Tutor 💬</h1>
-          <p className="page-subtitle">Ask questions, review progress, or talk about feelings.</p>
+          <h1 className="page-title">Chat with AI-Tutor 💬</h1>
+          <p className="page-subtitle">Ask questions, review progress, practice topics, or talk about feelings.</p>
         </div>
         <button
           className={`btn ${showCamera ? "btn-primary" : "btn-outline"}`}
@@ -193,7 +193,7 @@ const Chat = ({ userProgress, authToken, children = [], selectedChildId }) => {
       <div className="chat-container">
         <div className="chat-header">
           <div>
-            <h2>Autism Tutor 🤖</h2>
+            <h2>AI-Tutor 🤖</h2>
             <span>Calm, patient, and ready to help 🌟</span>
           </div>
         </div>

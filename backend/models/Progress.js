@@ -50,6 +50,30 @@ const preferencesSchema = new mongoose.Schema(
       type: String,
       default: "1234",
     },
+    completedVideos: {
+      type: [String],
+      default: [],
+    },
+    teacherGoals: {
+      type: [
+        {
+          id: String,
+          title: String,
+          topic: String,
+          targetLevel: String,
+          notes: String,
+          completed: {
+            type: Boolean,
+            default: false,
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now,
+          },
+        },
+      ],
+      default: [],
+    },
   },
   { _id: false }
 );
